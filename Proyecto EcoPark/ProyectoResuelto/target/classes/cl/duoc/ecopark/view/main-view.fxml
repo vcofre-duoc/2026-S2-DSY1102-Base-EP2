@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  VISTA RESUELTA.
+  El layout visual es el mismo de la base, ahora conectado al Controller.
+  fx:id vincula controles con @FXML; onAction vincula los botones.
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cl.duoc.ecopark.controller.MainController"
+            prefWidth="960" prefHeight="520">
+
+    <top>
+        <VBox spacing="3" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="18" right="24" bottom="14" left="24"/>
+            </padding>
+            <Label text="EcoPark | Control de estadías"/>
+            <Label text="Registro de autos y motocicletas"/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="24" alignment="TOP_LEFT">
+            <padding>
+                <Insets top="16" right="22" bottom="12" left="22"/>
+            </padding>
+
+            <!-- Panel izquierdo: formulario -->
+            <VBox spacing="14" prefWidth="295">
+                <Label text="Nueva estadía"/>
+                <GridPane hgap="12" vgap="12">
+                    <Label text="Tipo:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="tipoCombo" prefWidth="185" promptText="Seleccione..."
+                              GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Patente:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="patenteField" promptText="Ej.: ABCD12" prefWidth="185"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Horas:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="horasField" promptText="Entre 1 y 24" prefWidth="185"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <TitledPane text="Beneficio para motocicleta" collapsible="false">
+                    <content>
+                        <VBox spacing="8">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <CheckBox fx:id="convenioCheck" text="Tiene convenio (20% de descuento)"/>
+                        </VBox>
+                    </content>
+                </TitledPane>
+
+                <HBox alignment="CENTER_RIGHT">
+                    <Button text="Registrar" prefWidth="105" onAction="#registrar"/>
+                </HBox>
+            </VBox>
+
+            <!-- Panel derecho: TableView -->
+            <VBox spacing="12" HBox.hgrow="ALWAYS">
+                <Label text="Estadías registradas"/>
+                <TableView fx:id="estadiasTable" prefHeight="325" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="tipoCol" text="Tipo" prefWidth="115"/>
+                        <TableColumn fx:id="patenteCol" text="Patente" prefWidth="140"/>
+                        <TableColumn fx:id="horasCol" text="Horas" prefWidth="100"/>
+                        <TableColumn fx:id="costoCol" text="Costo" prefWidth="145"/>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_LEFT">
+                    <Button text="Eliminar" prefWidth="105" onAction="#eliminar"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="12" right="24" bottom="14" left="24"/>
+            </padding>
+            <Label fx:id="mensajeLabel" text="Completa el formulario para registrar una estadía." wrapText="true"/>
+        </HBox>
+    </bottom>
+</BorderPane>

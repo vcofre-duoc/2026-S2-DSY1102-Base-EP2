@@ -1,0 +1,36 @@
+/*
+ * Apariencia básica de la plantilla. El FXML ya tiene la estructura visual.
+ * Los estudiantes no necesitan editar este archivo durante la actividad.
+ */
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+    -fx-background-color: #F7F9FC;
+}
+.label {
+    -fx-text-fill: #2A3747;
+}
+.combo-box, .text-field {
+    -fx-background-color: white;
+}
+.button {
+    -fx-background-color: #246EAB;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+.button:hover {
+    -fx-background-color: #144D82;
+}
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #D4DFE9;
+}
+.titled-pane > .title {
+    -fx-background-color: #EAF0F6;
+}
+
+/* Mensajes al pie del formulario: error o éxito. */
+.mensaje-error { -fx-text-fill: #BB2C2C; -fx-font-weight: bold; }
+.mensaje-exito { -fx-text-fill: #237A46; -fx-font-weight: bold; }

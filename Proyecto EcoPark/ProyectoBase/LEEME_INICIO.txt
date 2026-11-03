@@ -1,0 +1,24 @@
+EJERCICIO DE PRÁCTICA — ECOPARK
+==========================================
+Duración objetivo: 80 minutos aprox.
+
+El proyecto se puede importar y ejecutar desde el inicio, pero la interfaz
+NO está conectada a los métodos Java: es parte de lo que debes implementar.
+
+Ejecuta: cl.duoc.ecopark.Launcher (JDK 21).
+También puedes usar: mvn javafx:run.
+
+Archivos YA IMPLEMENTADOS:
+- pom.xml, Launcher.java, App.java.
+- Modelo orientado a objetos completo: clase abstracta, herencia, interfaz y cálculo de tarifas.
+- DAO implementado: lectura y escritura JSON utilizando Gson.
+- main-view.fxml: Estructura gráfica terminada, con formulario a la izquierda y tabla a la derecha.
+- ecopark.css: estilos básicos.
+- Comentarios explicativos en el código proporcionado.
+
+Archivos A COMPLETAR:
+- repository/EstadiaRepository.java: cargar, registrar, eliminar.
+- controller/MainController.java: initialize, registrar, eliminar y variables @FXML.
+- main-view.fxml: agregar enlaces con el Controller.
+
+Lee GUIA_DESARROLLO.md y el enunciado adjunto por separado.

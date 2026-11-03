@@ -1,0 +1,6 @@
+ECOPARK - PROYECTO COMPLETAMENTE RESUELTO
+======================================
+La aplicación ya tiene Controller, Repository, FXML y JSON conectados.
+Ejecutar: cl.duoc.ecopark.Launcher con JDK 21.
+Lee README.md y SOLUCION_PASO_A_PASO.md.
+GUIA_DESARROLLO_BASE_PARA_ESTUDIANTES.md conserva las indicaciones de la práctica original (ya resuelta).

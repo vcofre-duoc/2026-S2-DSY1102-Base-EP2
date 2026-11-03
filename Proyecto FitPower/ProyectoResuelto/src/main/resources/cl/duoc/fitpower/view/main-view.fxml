@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<!-- Vista única editable en Scene Builder. Los fx:id coinciden con atributos @FXML. -->
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cl.duoc.fitpower.controller.MainController" spacing="14" prefWidth="940" prefHeight="760"
+      style="-fx-background-color: #f3f6fa; -fx-font-size: 13px;">
+    <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+    <Label text="FitPower | Registro de clases" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #003865;"/>
+    <Label text="Datos comunes" style="-fx-font-weight: bold;"/>
+    <GridPane hgap="14" vgap="10">
+        <columnConstraints><ColumnConstraints minWidth="190"/><ColumnConstraints minWidth="240"/><ColumnConstraints minWidth="180"/><ColumnConstraints minWidth="180"/></columnConstraints>
+        <Label text="Tipo de clase" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label text="Nombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Cupo máximo de 1 a 30" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <Label text="Duración en minutos" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+        <ComboBox fx:id="tipoCombo" promptText="Seleccione tipo" prefWidth="190" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="nombreField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <TextField fx:id="cupoField" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="duracionField" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+    </GridPane>
+    <Separator/>
+    <Label text="Clase Personal" style="-fx-font-weight: bold;"/>
+    <HBox spacing="16" alignment="CENTER_LEFT">
+        <VBox spacing="6"><Label text="Nombre del instructor"/><TextField fx:id="instructorField" prefWidth="260"/></VBox>
+        <CheckBox fx:id="evaluacionCheck" text="Evaluación física previa (sí)"/>
+        <CheckBox fx:id="cancelacionCheck" text="Cancelación activa (sí)"/>
+    </HBox>
+    <Label text="Casillas sin marcar equivalen a no."/>
+    <Label text="Clase Semipersonal" style="-fx-font-weight: bold;"/>
+    <HBox spacing="16" alignment="CENTER_LEFT"><Label text="Cantidad de participantes"/><TextField fx:id="participantesField" prefWidth="150"/></HBox>
+    <Button text="Registrar" onAction="#registrar" defaultButton="true" style="-fx-background-color: #003865; -fx-text-fill: white;"/>
+    <Separator/>
+    <Label text="Clases registradas" style="-fx-font-weight: bold;"/>
+    <TableView fx:id="clasesTable" VBox.vgrow="ALWAYS" prefHeight="210">
+        <columns>
+            <TableColumn fx:id="tipoCol" text="Tipo" prefWidth="210"/>
+            <TableColumn fx:id="nombreCol" text="Nombre" prefWidth="245"/>
+            <TableColumn fx:id="cupoCol" text="Cupo" prefWidth="100"/>
+            <TableColumn fx:id="duracionCol" text="Duración (min)" prefWidth="150"/>
+            <TableColumn fx:id="costoCol" text="Costo clase" prefWidth="165"/>
+        </columns>
+    </TableView>
+    <Button text="Eliminar seleccionada" onAction="#eliminar"/>
+    <Label fx:id="mensajeLabel" wrapText="true" minHeight="45" maxWidth="890" accessibleText="Resultado de la última operación"/>
+</VBox>

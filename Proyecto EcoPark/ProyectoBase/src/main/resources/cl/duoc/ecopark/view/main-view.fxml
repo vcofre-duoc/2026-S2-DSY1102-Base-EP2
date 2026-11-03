@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+  VISTA BASE, DISEÑO YA CONSTRUIDO.
+  Actividad del estudiante: agregar fx:controller, fx:id y onAction.
+  No contiene enlaces con código Java: se entregó SOLO la estructura visual.
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="960" prefHeight="520">
+
+    <top>
+        <VBox spacing="3" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="18" right="24" bottom="14" left="24"/>
+            </padding>
+            <Label text="EcoPark | Control de estadías"/>
+            <Label text="Registro de autos y motocicletas"/>
+        </VBox>
+    </top>
+
+    <center>
+        <HBox spacing="24" alignment="TOP_LEFT">
+            <padding>
+                <Insets top="16" right="22" bottom="12" left="22"/>
+            </padding>
+
+            <!-- Panel izquierdo: formulario -->
+            <VBox spacing="14" prefWidth="295">
+                <Label text="Nueva estadía"/>
+                <GridPane hgap="12" vgap="12">
+                    <Label text="Tipo:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox prefWidth="185" promptText="Seleccione..."
+                              GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Patente:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField promptText="Ej.: ABCD12" prefWidth="185"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Horas:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField promptText="Entre 1 y 24" prefWidth="185"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <TitledPane text="Beneficio para motocicleta" collapsible="false">
+                    <content>
+                        <VBox spacing="8">
+                            <padding>
+                                <Insets top="10" right="10" bottom="10" left="10"/>
+                            </padding>
+                            <CheckBox text="Tiene convenio (20% de descuento)"/>
+                        </VBox>
+                    </content>
+                </TitledPane>
+
+                <HBox alignment="CENTER_RIGHT">
+                    <Button text="Registrar" prefWidth="105"/>
+                </HBox>
+            </VBox>
+
+            <!-- Panel derecho: TableView -->
+            <VBox spacing="12" HBox.hgrow="ALWAYS">
+                <Label text="Estadías registradas"/>
+                <TableView prefHeight="325" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="Tipo" prefWidth="115"/>
+                        <TableColumn text="Patente" prefWidth="140"/>
+                        <TableColumn text="Horas" prefWidth="100"/>
+                        <TableColumn text="Costo" prefWidth="145"/>
+                    </columns>
+                </TableView>
+                <HBox alignment="CENTER_LEFT">
+                    <Button text="Eliminar" prefWidth="105"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="12" right="24" bottom="14" left="24"/>
+            </padding>
+            <Label text="Completa el formulario para registrar una estadía."/>
+        </HBox>
+    </bottom>
+</BorderPane>
